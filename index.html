@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Background Image */
+        body {
+            background-image: url('assets/img/garrettmorrow.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Transparent Form Container */
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        .social-login button {
+            margin-bottom: 10px;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: none;
+        }
+        .dropdown-item.active, .dropdown-item:active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h3>Sign In</h3>
+    
+    <!-- Username/Email and Password Login -->
+    <form class="needs-validation" action="home.html" method="post" novalidate>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="username" placeholder="Username or Email" required>
+            <label for="username">Username or Email Address</label>
+            <div class="invalid-feedback">
+                Username/Email Address is required.
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+            <div class="invalid-feedback">
+                Password missing!
+            </div>
+        </div>
+
+        <!-- Login Button -->
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-dark">Login</button>
+        </div>
+
+        <!-- Divider -->
+        <div class="text-center mt-3">
+            <span>or continue with</span>
+        </div>
+        <div class="text-center mt-3"> </div>
+        
+        <!-- Social Login Options -->
+         <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary w-100 mb-2">
+                     <!-- Facebook icon -->
+                    <i class="bi bi-facebook"></i> Facebook
+                </button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-danger w-100 mb-2">
+                    <i class="bi bi-google"></i> Google
+                </button>
+            </div>
+        </div>
+        
+        <!-- Forgot Password and Create Account Links -->
+        <div class="text-center mt-3">
+            <a href="forgot_password.html">Forgot Password?</a> | <a href="registration_options.html">Create Account</a>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+</script>
+
+</body>
+</html>
